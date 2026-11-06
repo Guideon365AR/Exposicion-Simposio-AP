@@ -1,0 +1,6 @@
+{
+  "name": "Transformación Digital SRP - Congreso sobre Democracia",
+  "description": "Landing page de difusión de la ponencia sobre Transformación Digital e Inteligencia Artificial en el Servicio de Resguardo Patrimonial (UNR) en el Congreso sobre Democracia 2026.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

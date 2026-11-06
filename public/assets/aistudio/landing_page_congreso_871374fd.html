@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformación Digital SRP - Congreso de la Democracia 2026</title>
+    
+    <!-- Fuentes de Google: Poppins para títulos, Inter para cuerpo de texto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para íconos minimalistas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#4b2671', /* Deep purple */
+                            navy: '#0f172a',   /* Dark navy blue */
+                            light: '#f8fafc',  /* Light gray background */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Estilos CSS Personalizados para Animaciones y Detalles -->
+    <style>
+        /* Clases base para la animación de revelado al hacer scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        /* Clase añadida por JS cuando el elemento entra en el viewport */
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Retrasos escalonados para elementos agrupados (ej. tarjetas) */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Efecto de texto con gradiente para destacar */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(90deg, #9333ea, #c084fc);
+        }
+
+        /* Fondo decorativo sutil para el Hero */
+        .bg-hero-pattern {
+            background-image: radial-gradient(circle at 15% 50%, rgba(75, 38, 113, 0.4) 0%, transparent 50%),
+                              radial-gradient(circle at 85% 30%, rgba(75, 38, 113, 0.3) 0%, transparent 50%);
+        }
+
+        /* Transición suave para la barra de navegación */
+        .nav-scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            color: #0f172a !important;
+        }
+        
+        .nav-scrolled .nav-link {
+            color: #475569;
+        }
+        
+        .nav-scrolled .nav-link:hover {
+            color: #4b2671;
+        }
+        
+        .nav-scrolled .logo-text {
+            color: #4b2671;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-white antialiased overflow-x-hidden">
+
+    <!-- Navegación Fija -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 text-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#" class="font-heading font-bold text-xl tracking-tight logo-text transition-colors duration-300">
+                VII SIMPOSIO AP
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#desafio" class="nav-link transition-colors duration-300 hover:text-purple-300">El Desafío</a>
+                <a href="#solucion" class="nav-link transition-colors duration-300 hover:text-purple-300">La Solución</a>
+                <a href="#pilares" class="nav-link transition-colors duration-300 hover:text-purple-300">Pilares</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header class="relative min-h-screen flex items-center bg-brand-navy bg-hero-pattern overflow-hidden">
+        <div class="absolute inset-0 bg-black/20 z-0"></div> <!-- Overlay oscuro -->
+        
+        <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center reveal">
+            <!-- Tagline -->
+            <p class="text-purple-300 font-semibold tracking-wider text-sm md:text-base uppercase mb-6 flex flex-col md:flex-row items-center justify-center gap-2">
+                <span>Congreso sobre Democracia 2026</span>
+                <span class="hidden md:inline text-purple-500/50">|</span>
+                <span>VII Simposio de Administración Pública</span>
+            </p>
+            
+            <p class="text-slate-300 font-light text-sm md:text-md mb-8 border border-purple-500/30 rounded-full inline-block px-4 py-1 bg-brand-purple/20">
+                Del expediente al ALGORITMO
+            </p>
+
+            <!-- Título Principal -->
+            <h1 class="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8">
+                Transformación Digital del <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-200">Servicio de Resguardo Patrimonial</span>
+            </h1>
+
+            <!-- Subtítulo -->
+            <p class="text-lg md:text-xl text-slate-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+                De un modelo reactivo analógico hacia un paradigma predictivo impulsado por Inteligencia Artificial y datos empíricos en la Universidad Nacional de Rosario.
+            </p>
+
+            <!-- Call to Action -->
+            <a href="#desafio" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-brand-purple rounded-full hover:bg-purple-800 transition-all duration-300 hover:shadow-[0_0_20px_rgba(75,38,113,0.5)] hover:-translate-y-1">
+                Conoce el Proyecto <i class="fa-solid fa-arrow-down ml-2 animate-bounce"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Section 1: El Desafío -->
+    <section id="desafio" class="py-24 md:py-32 bg-white">
+        <div class="max-w-4xl mx-auto px-6 md:px-12 text-center reveal">
+            <h2 class="font-heading text-sm font-bold text-brand-purple uppercase tracking-widest mb-4">Contexto</h2>
+            <h3 class="font-heading text-3xl md:text-5xl font-bold text-slate-900 mb-10">El Desafío Institucional</h3>
+            
+            <div class="space-y-8 text-lg text-slate-600 leading-relaxed text-justify md:text-left">
+                <p>
+                    Para abrir este debate, es ineludible citar la famosa <strong class="text-brand-navy">Paradoja de la Productividad de Solow</strong>: <em class="text-slate-500">"Podemos ver la era de las computadoras en todas partes, menos en las estadísticas de productividad"</em>. Hoy, este debate renace con fuerza frente a la implementación de la Inteligencia Artificial en el sector público.
+                </p>
+                <p>
+                    El Estado suele operar con inercias lineales y burocráticas heredadas del siglo XIX para intentar dar respuesta a problemas complejos del siglo XXI. En el resguardo patrimonial, esa inercia se manifestaba en libros de novedades de papel, actas manuscritas y un funcionamiento fragmentado y puramente reactivo.
+                </p>
+                <div class="bg-brand-light p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm mt-8 border-l-4 border-l-brand-purple">
+                    <p class="font-medium text-brand-navy">
+                        En la UNR superamos esta paradoja no con abundancia, sino frente a <span class="text-brand-purple font-semibold">severas restricciones presupuestarias y de personal</span>. La digitalización no fue un lujo, fue la única vía para gestionar un territorio extenso y crítico con recursos limitados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: La Solución (Grid) -->
+    <section id="solucion" class="py-24 md:py-32 bg-brand-light">
+        <div class="max-w-6xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-heading text-sm font-bold text-brand-purple uppercase tracking-widest mb-4">Implementación</h2>
+                <h3 class="font-heading text-3xl md:text-5xl font-bold text-slate-900">La Solución Tecnológica</h3>
+                <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Un modelo desarrollado a medida para transformar el dato administrativo en inteligencia preventiva.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-3xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(75,38,113,0.1)] reveal delay-100 group">
+                    <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-purple transition-colors duration-300">
+                        <i class="fa-solid fa-microchip text-2xl text-brand-purple group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-slate-900 mb-3">IA Agéntica</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Utilizada como un verdadero multiplicador de fuerzas. Permitió a un equipo interno de solo 3 personas programar, diseñar arquitecturas complejas de software y depurar código sin requerir licencias privativas millonarias.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-3xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(75,38,113,0.1)] reveal delay-200 group">
+                    <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-purple transition-colors duration-300">
+                        <i class="fa-solid fa-mobile-screen-button text-2xl text-brand-purple group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-slate-900 mb-3">Nuevas Herramientas</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Creación del <strong>Sistema Operativo Digital SRP</strong> y <strong>Gestión SRP</strong>. Herramientas para registros móviles en terreno, lectura automática de PDFs complejos y gestión documental digitalizada de legajos.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-3xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(75,38,113,0.1)] reveal delay-300 group">
+                    <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-purple transition-colors duration-300">
+                        <i class="fa-solid fa-chart-line text-2xl text-brand-purple group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-slate-900 mb-3">Datos Predictivos</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Transición radical del papel a la analítica predictiva en tiempo real. El sistema identifica automáticamente patrones de riesgo, franjas críticas y vulnerabilidades para una asignación de recursos basada en evidencia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Pilares del Modelo -->
+    <section id="pilares" class="py-24 md:py-32 bg-white relative overflow-hidden">
+        <!-- Decoración de fondo sutil -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-brand-light blur-3xl opacity-50"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-purple-50 blur-3xl opacity-50"></div>
+
+        <div class="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-heading text-sm font-bold text-brand-purple uppercase tracking-widest mb-4">Estructura</h2>
+                <h3 class="font-heading text-3xl md:text-5xl font-bold text-slate-900">Pilares del Modelo Institucional</h3>
+                <p class="mt-4 text-lg text-slate-600">Un desarrollo transferible, robusto y jurídicamente válido para el sector público.</p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Pilar 1 -->
+                <div class="flex flex-col md:flex-row items-start md:items-center p-6 md:p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-md transition-shadow reveal">
+                    <div class="flex-shrink-0 w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-4 md:mb-0 md:mr-8">
+                        <i class="fa-solid fa-scale-balanced text-2xl text-brand-navy"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading text-xl font-bold text-slate-900 mb-2">1. Seguridad Jurídica</h4>
+                        <p class="text-slate-600">
+                            Integración de la <strong>Firma Digital (Ley Nacional 25.506)</strong>, dotando a cada acta y registro operativo de plena validez probatoria, respaldado por registros inmutables de auditoría.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pilar 2 -->
+                <div class="flex flex-col md:flex-row items-start md:items-center p-6 md:p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-md transition-shadow reveal delay-100">
+                    <div class="flex-shrink-0 w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-4 md:mb-0 md:mr-8">
+                        <i class="fa-solid fa-shield-halved text-2xl text-brand-navy"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading text-xl font-bold text-slate-900 mb-2">2. Ciberseguridad Robusta</h4>
+                        <p class="text-slate-600">
+                            Protección de información sensible bajo estándares rigurosos. Tráfico cifrado en tránsito (TLS 1.3) y en reposo (AES-256), complementado con controles de acceso granulares basados en roles (RBAC).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pilar 3 -->
+                <div class="flex flex-col md:flex-row items-start md:items-center p-6 md:p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-md transition-shadow reveal delay-200">
+                    <div class="flex-shrink-0 w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-4 md:mb-0 md:mr-8">
+                        <i class="fa-solid fa-network-wired text-2xl text-brand-navy"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading text-xl font-bold text-slate-900 mb-2">3. Interoperabilidad</h4>
+                        <p class="text-slate-600">
+                            La plataforma dialoga de forma nativa con los sistemas transversales del ecosistema del Estado (ej. Sudocu), demostrando que la modernización trata de tender puentes, no de crear islas tecnológicas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Conclusión (Blockquote) -->
+    <section class="py-32 bg-brand-navy relative flex items-center justify-center overflow-hidden">
+        <!-- Decoración geométrica -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M0 40L40 0H20L0 20M40 40V20L20 40" stroke="white" stroke-width="1" fill="none"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid-pattern)"/>
+            </svg>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10 reveal">
+            <i class="fa-solid fa-quote-left text-4xl md:text-6xl text-brand-purple/50 mb-8"></i>
+            <blockquote class="font-heading text-2xl md:text-4xl font-semibold text-white leading-tight md:leading-normal mb-8">
+                "La Inteligencia Artificial en el Estado no debe ser juzgada por el brillo de sus discursos, sino por su <span class="text-gradient">capacidad concreta de resolver problemas</span> donde los recursos escasean."
+            </blockquote>
+            <div class="w-20 h-1 bg-brand-purple mx-auto rounded-full mb-6"></div>
+            <p class="text-slate-400 font-medium tracking-wide uppercase text-sm">
+                Conclusión del Proyecto - UNR
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0b1121] py-12 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-6 md:px-12 text-center reveal">
+            <p class="font-heading text-white font-semibold text-lg mb-2">
+                Universidad Nacional de Rosario (UNR)
+            </p>
+            <p class="text-slate-400 text-sm mb-6">
+                Congreso sobre Democracia | 3, 4 y 5 de noviembre de 2026
+            </p>
+            <div class="flex justify-center space-x-4 text-slate-500">
+                <span class="text-xs border border-slate-800 px-3 py-1 rounded-full">Gestión Pública</span>
+                <span class="text-xs border border-slate-800 px-3 py-1 rounded-full">Innovación</span>
+                <span class="text-xs border border-slate-800 px-3 py-1 rounded-full">Inteligencia Artificial</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica de Animaciones e Interacción -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Cambio de estilo en la barra de navegación al hacer scroll
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('nav-scrolled');
+                    navbar.classList.remove('text-white');
+                    navbar.classList.remove('py-4');
+                    navbar.classList.add('py-3');
+                } else {
+                    navbar.classList.remove('nav-scrolled');
+                    navbar.classList.add('text-white');
+                    navbar.classList.remove('py-3');
+                    navbar.classList.add('py-4');
+                }
+            });
+
+            // 2. Intersection Observer para animaciones al revelar (Scroll Reveal)
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 // Se activa cuando el 15% del elemento es visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Opcional: dejar de observar una vez animado para que no se repita al subir
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Seleccionar todos los elementos con la clase 'reveal' y observarlos
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
