@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Maximize, CircleCheck as CheckCircle2 } from 'lucide-react';
 
 export function VideoHub() {
-  const [activeTab, setActiveTab] = useState<'intro' | 'slides'>('slides');
+  const [activeTab, setActiveTab] = useState<'intro' | 'slides'>('intro');
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -64,16 +64,6 @@ export function VideoHub() {
           {/* Video Selector Tabs */}
           <div className="inline-flex p-1.5 mt-8 bg-slate-900 border border-slate-800 rounded-2xl gap-2">
             <button
-              onClick={() => handleTabChange('slides')}
-              className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
-                activeTab === 'slides'
-                  ? 'bg-purple-600 text-white shadow-md shadow-purple-950'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800'
-              }`}
-            >
-              1. Video Explicativo & Arquitectura
-            </button>
-            <button
               onClick={() => handleTabChange('intro')}
               className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                 activeTab === 'intro'
@@ -81,7 +71,17 @@ export function VideoHub() {
                   : 'text-slate-400 hover:text-white hover:bg-slate-800'
               }`}
             >
-              2. Introducción de Gustavo Núñez
+              1. Introducción de Gustavo Núñez
+            </button>
+            <button
+              onClick={() => handleTabChange('slides')}
+              className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                activeTab === 'slides'
+                  ? 'bg-purple-600 text-white shadow-md shadow-purple-950'
+                  : 'text-slate-400 hover:text-white hover:bg-slate-800'
+              }`}
+            >
+              2. Video Explicativo & Arquitectura
             </button>
           </div>
         </div>
