@@ -54,7 +54,7 @@ export function VideoHub() {
             Material Audiovisual Oficial
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight font-heading">
-            Presentación en Video de la Ponencia
+            Introducción en Video de la Ponencia
           </h2>
           <p className="mt-4 text-slate-300 text-base sm:text-lg font-light">
             Conocé de primera mano el recorrido del proyecto, su marco conceptual y los resultados demostrables en la
