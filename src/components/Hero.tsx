@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Video, FileText, MapPin, Clock, Users, ArrowDown, Sparkles } from 'lucide-react';
+import { Calendar, Video, FileText, MapPin, Clock, Users, Sparkles } from 'lucide-react';
 import { CongresoDemocraciaLogo, UNRBadge, OrganizersRow } from './Logos';
 import { AudioPlayer } from './AudioPlayer';
 import { MAIN_SPEAKER } from '../data/congresoData';
@@ -98,13 +98,7 @@ export function Hero({ onOpenCalendar, onOpenAbstract }: HeroProps) {
             <div className="bg-gradient-to-b from-slate-900/90 to-purple-950/40 border border-purple-800/40 rounded-3xl p-6 sm:p-7 shadow-2xl backdrop-blur-xl space-y-6">
               {/* Speaker Profile header */}
               <div className="flex items-center gap-4 pb-5 border-b border-white/10">
-                <div className="w-16 h-16 rounded-2xl bg-purple-900/50 border border-purple-500/30 overflow-hidden flex items-center justify-center text-purple-200 font-bold text-xl shrink-0 shadow-md">
-                  {/* Avatar or speaker initial */}
-                  <img
-                    src="/assets/aistudio/Presentacion_Congreso_intro_769e4df9.mp4"
-                    className="w-full h-full object-cover hidden"
-                    alt="Gustavo Núñez"
-                  />
+                <div className="w-16 h-16 rounded-2xl bg-purple-900/50 border border-purple-500/30 flex items-center justify-center text-purple-200 font-bold text-xl shrink-0 shadow-md">
                   <span>GN</span>
                 </div>
                 <div>

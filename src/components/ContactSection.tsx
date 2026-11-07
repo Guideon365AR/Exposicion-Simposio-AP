@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Send, CheckCircle2, MessageSquare, Building2, User, Sparkles } from 'lucide-react';
+import { Mail, Send, CircleCheck as CheckCircle2 } from 'lucide-react';
 import { MAIN_SPEAKER } from '../data/congresoData';
 
 export function ContactSection() {

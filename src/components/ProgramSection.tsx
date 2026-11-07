@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Calendar, Clock, MapPin, User, Star, Eye, Image as ImageIcon, X, ChevronRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Calendar, Clock, MapPin, User, Star, Eye, Image as ImageIcon, X } from 'lucide-react';
 import { CONGRESS_PROGRAM, PanelSession } from '../data/congresoData';
 
 interface ProgramSectionProps {
@@ -9,6 +9,19 @@ interface ProgramSectionProps {
 export function ProgramSection({ onSelectSession }: ProgramSectionProps) {
   const [selectedDay, setSelectedDay] = useState<string>('Miércoles 4/11');
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!lightboxImage) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightboxImage(null);
+    };
+    document.addEventListener('keydown', handleKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      document.body.style.overflow = '';
+    };
+  }, [lightboxImage]);
 
   const flyers = [
     {

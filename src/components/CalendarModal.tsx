@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { X, Calendar, Download, ExternalLink, Check, Clock, MapPin, Sparkles } from 'lucide-react';
+import { X, Download, ExternalLink, Check, Clock, MapPin, Sparkles } from 'lucide-react';
 import { generateIcsContent, generateGoogleCalendarUrl, CalendarEventData } from '../utils/calendar';
 import { PanelSession } from '../data/congresoData';
+import { useModalClose } from '../hooks/useModalClose';
 
 interface CalendarModalProps {
   isOpen: boolean;
@@ -11,6 +12,7 @@ interface CalendarModalProps {
 
 export function CalendarModal({ isOpen, onClose, session }: CalendarModalProps) {
   const [copied, setCopied] = useState(false);
+  useModalClose(onClose, isOpen);
 
   if (!isOpen) return null;
 
@@ -63,7 +65,7 @@ export function CalendarModal({ isOpen, onClose, session }: CalendarModalProps) 
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onClick={onClose}>
       <div
         className="relative w-full max-w-lg bg-slate-900 border border-purple-800/60 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6"
         onClick={(e) => e.stopPropagation()}

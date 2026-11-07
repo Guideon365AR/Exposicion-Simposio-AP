@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { X, Printer, Copy, Check, FileText, Download } from 'lucide-react';
+import { X, Printer, Copy, Check, FileText } from 'lucide-react';
 import { MAIN_SPEAKER, CONGRESS_INFO } from '../data/congresoData';
+import { useModalClose } from '../hooks/useModalClose';
 
 interface PaperModalProps {
   isOpen: boolean;
@@ -9,6 +10,7 @@ interface PaperModalProps {
 
 export function PaperModal({ isOpen, onClose }: PaperModalProps) {
   const [copied, setCopied] = useState(false);
+  useModalClose(onClose, isOpen);
 
   if (!isOpen) return null;
 
@@ -50,7 +52,7 @@ RESULTADOS CUANTITATIVOS:
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto" onClick={onClose}>
       <div
         className="relative w-full max-w-3xl bg-slate-900 border border-purple-800/60 rounded-3xl p-6 sm:p-10 shadow-2xl my-8 space-y-6 max-h-[90vh] overflow-y-auto text-slate-200"
         onClick={(e) => e.stopPropagation()}

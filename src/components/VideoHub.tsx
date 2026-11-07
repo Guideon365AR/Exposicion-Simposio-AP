@@ -1,11 +1,10 @@
 import React, { useState, useRef } from 'react';
-import { Play, Pause, Maximize, Volume2, VolumeX, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Maximize, CircleCheck as CheckCircle2 } from 'lucide-react';
 
 export function VideoHub() {
   const [activeTab, setActiveTab] = useState<'intro' | 'slides'>('slides');
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
 
   const videos = {
     intro: {
@@ -39,28 +38,11 @@ export function VideoHub() {
     }
   };
 
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      videoRef.current.play().catch(() => {});
-      setIsPlaying(true);
-    }
-  };
-
   const toggleFullscreen = () => {
     if (!videoRef.current) return;
     if (videoRef.current.requestFullscreen) {
       videoRef.current.requestFullscreen();
     }
-  };
-
-  const toggleMute = () => {
-    if (!videoRef.current) return;
-    videoRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
   };
 
   return (
