@@ -96,6 +96,7 @@ export function VideoHub() {
               className="w-full h-auto max-h-[80vh] object-contain"
               playsInline
               controls
+              preload="auto"
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
             />
