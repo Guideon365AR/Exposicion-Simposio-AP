@@ -41,12 +41,6 @@ export default function App() {
         {/* Video Presentation Hub */}
         <VideoHub />
 
-        {/* The Theoretical Challenge: Solow's Paradox in Public Admin */}
-        <SolowParadoxSection />
-
-        {/* 3-Layer Sequential Architecture & Before/After */}
-        <ArchitectureSection />
-
         {/* Audio Player Strip (Full Width) */}
         <section className="py-12 md:py-16 bg-slate-950 border-t border-purple-900/20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,6 +50,12 @@ export default function App() {
             />
           </div>
         </section>
+
+        {/* The Theoretical Challenge: Solow's Paradox in Public Admin */}
+        <SolowParadoxSection />
+
+        {/* 3-Layer Sequential Architecture & Before/After */}
+        <ArchitectureSection />
 
         {/* 3 Institutional Pillars & 6 Empirical Metrics */}
         <PillarsAndMetrics onOpenAbstract={() => setPaperModalOpen(true)} />

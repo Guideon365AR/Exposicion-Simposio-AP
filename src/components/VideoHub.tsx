@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Maximize, CircleCheck as CheckCircle2 } from 'lucide-react';
+import { Maximize } from 'lucide-react';
 
 export function VideoHub() {
   const [activeTab, setActiveTab] = useState<'intro' | 'slides'>('intro');
@@ -133,32 +133,6 @@ export function VideoHub() {
           </div>
         </div>
 
-        {/* Video Key Takeaways Banner */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-purple-400 shrink-0 mt-0.5" />
-            <div className="text-xs text-slate-300 leading-relaxed">
-              <strong className="text-white block font-semibold mb-0.5">Diagnóstico del "Antes"</strong>
-              Libros de actas de papel, dispersión territorial y nula capacidad predictiva superados con tecnología.
-            </div>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-purple-400 shrink-0 mt-0.5" />
-            <div className="text-xs text-slate-300 leading-relaxed">
-              <strong className="text-white block font-semibold mb-0.5">Despliegue de 3 Capas</strong>
-              Digitalización con SGD-SRP, app móvil territorial y modelos de IA predictiva con mapas de calor.
-            </div>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-purple-400 shrink-0 mt-0.5" />
-            <div className="text-xs text-slate-300 leading-relaxed">
-              <strong className="text-white block font-semibold mb-0.5">Impacto Inmediato</strong>
-              -80% tiempo de respuesta, -90% en tiempos de auditoría y -35% en vandalismo y delitos.
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
