@@ -15,6 +15,7 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { CalendarModal } from './components/CalendarModal';
 import { PaperModal } from './components/PaperModal';
+import { AudioPlayer } from './components/AudioPlayer';
 import { PanelSession } from './data/congresoData';
 
 export default function App() {
@@ -34,8 +35,8 @@ export default function App() {
 
       {/* Main Content Sections */}
       <main className="flex-1" id="ponencia">
-        {/* Hero with Event Summary & Audio Player */}
-        <Hero onOpenCalendar={() => handleOpenCalendar()} />
+        {/* Hero with Event Summary */}
+        <Hero />
 
         {/* Video Presentation Hub */}
         <VideoHub />
@@ -45,6 +46,16 @@ export default function App() {
 
         {/* 3-Layer Sequential Architecture & Before/After */}
         <ArchitectureSection />
+
+        {/* Audio Player Strip (Full Width) */}
+        <section className="py-12 md:py-16 bg-slate-950 border-t border-purple-900/20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <AudioPlayer
+              src="/assets/aistudio/ElevenLabs_2026-11-06T15_56_49_Guideon_ivc_s50_sim95_v4_4b8892c2.mp3"
+              title="Audio Oficial de la Ponencia · Locución completa de Gustavo Núñez en el Congreso"
+            />
+          </div>
+        </section>
 
         {/* 3 Institutional Pillars & 6 Empirical Metrics */}
         <PillarsAndMetrics onOpenAbstract={() => setPaperModalOpen(true)} />

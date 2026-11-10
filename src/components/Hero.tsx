@@ -1,14 +1,9 @@
 import React from 'react';
-import { Calendar, MapPin, Clock, Users, Sparkles } from 'lucide-react';
-import { CongresoDemocraciaLogo, UNRBadge, OrganizersRow } from './Logos';
-import { AudioPlayer } from './AudioPlayer';
+import { MapPin, Clock, Users, Sparkles } from 'lucide-react';
+import { CongresoDemocraciaLogo, UNRBadge } from './Logos';
 import { MAIN_SPEAKER } from '../data/congresoData';
 
-interface HeroProps {
-  onOpenCalendar: () => void;
-}
-
-export function Hero({ onOpenCalendar }: HeroProps) {
+export function Hero() {
   return (
     <section className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden flex flex-col justify-between">
       {/* Background radial atmosphere */}
@@ -117,33 +112,10 @@ export function Hero({ onOpenCalendar }: HeroProps) {
                 </div>
               </div>
 
-              {/* Invitation button inside card */}
-              <button
-                onClick={onOpenCalendar}
-                className="w-full py-3 px-4 bg-purple-600/90 hover:bg-purple-600 text-white rounded-xl font-semibold text-sm flex items-center justify-center gap-2 shadow-md shadow-purple-950 transition-colors"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>Agregar a Google Calendar / iCal</span>
-              </button>
             </div>
           </div>
         </div>
 
-        {/* Audio Player Strip (Full Width) */}
-        <div className="mt-10 max-w-4xl mx-auto">
-          <AudioPlayer
-            src="/assets/aistudio/ElevenLabs_2026-11-06T15_56_49_Guideon_ivc_s50_sim95_v4_4b8892c2.mp3"
-            title="Audio Oficial de la Ponencia · Locución completa de Gustavo Núñez en el Congreso"
-          />
-        </div>
-
-        {/* Organizers Strip */}
-        <div className="mt-14 pt-8 border-t border-white/5">
-          <div className="text-center text-[11px] uppercase tracking-wider text-slate-500 mb-3">
-            Organizan el VII Simposio de Administración Pública
-          </div>
-          <OrganizersRow />
-        </div>
       </div>
     </section>
   );
