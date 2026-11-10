@@ -1,15 +1,14 @@
 import React from 'react';
-import { Calendar, Video, FileText, MapPin, Clock, Users, Sparkles } from 'lucide-react';
+import { Calendar, MapPin, Clock, Users, Sparkles } from 'lucide-react';
 import { CongresoDemocraciaLogo, UNRBadge, OrganizersRow } from './Logos';
 import { AudioPlayer } from './AudioPlayer';
 import { MAIN_SPEAKER } from '../data/congresoData';
 
 interface HeroProps {
   onOpenCalendar: () => void;
-  onOpenAbstract: () => void;
 }
 
-export function Hero({ onOpenCalendar, onOpenAbstract }: HeroProps) {
+export function Hero({ onOpenCalendar }: HeroProps) {
   return (
     <section className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden flex flex-col justify-between">
       {/* Background radial atmosphere */}
@@ -65,32 +64,7 @@ export function Hero({ onOpenCalendar, onOpenAbstract }: HeroProps) {
               la Universidad Nacional de Rosario.
             </p>
 
-            {/* Quick action buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <a
-                href="#video"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-sm shadow-lg shadow-purple-900/50 transition-all active:scale-[0.98]"
-              >
-                <Video className="w-4 h-4" />
-                <span>Ver Presentación en Video</span>
-              </a>
 
-              <button
-                onClick={onOpenCalendar}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white font-semibold text-sm border border-slate-700 transition-all active:scale-[0.98]"
-              >
-                <Calendar className="w-4 h-4 text-purple-400" />
-                <span>Agendar (4/11 · 16:00 h)</span>
-              </button>
-
-              <button
-                onClick={onOpenAbstract}
-                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white font-medium text-sm transition-colors"
-              >
-                <FileText className="w-4 h-4 text-slate-400" />
-                <span>Resumen Académico</span>
-              </button>
-            </div>
           </div>
 
           {/* Right Column (5 cols): Event Info Card & Speaker */}

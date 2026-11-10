@@ -35,10 +35,7 @@ export default function App() {
       {/* Main Content Sections */}
       <main className="flex-1" id="ponencia">
         {/* Hero with Event Summary & Audio Player */}
-        <Hero
-          onOpenCalendar={() => handleOpenCalendar()}
-          onOpenAbstract={() => setPaperModalOpen(true)}
-        />
+        <Hero onOpenCalendar={() => handleOpenCalendar()} />
 
         {/* Video Presentation Hub */}
         <VideoHub />
