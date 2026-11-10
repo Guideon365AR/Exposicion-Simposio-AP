@@ -11,7 +11,7 @@ export function VideoHub() {
       id: 'intro',
       title: 'Presentación del Expositor: Gustavo Núñez',
       subtitle: 'Introducción a la experiencia del Servicio de Resguardo Patrimonial',
-      src: '/assets/aistudio/Presentacion_Congreso_intro.mp4',
+      src: '/assets/aistudio/Intro.mp4',
       badge: 'Video Intro',
       description:
         'Gustavo Núñez explica el origen histórico del Servicio de Resguardo Patrimonial (evolución de la guardia de los años 80), las funciones críticas de custodia y el inicio del proyecto de transformación digital hace dos años en la UNR.'
