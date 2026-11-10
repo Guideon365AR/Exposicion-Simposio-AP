@@ -2,40 +2,16 @@ import React, { useState, useRef } from 'react';
 import { Maximize } from 'lucide-react';
 
 export function VideoHub() {
-  const [activeTab, setActiveTab] = useState<'intro' | 'slides'>('intro');
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const videos = {
-    intro: {
-      id: 'intro',
-      title: 'Presentación del Expositor: Gustavo Núñez',
-      subtitle: 'Introducción a la experiencia del Servicio de Resguardo Patrimonial',
-      src: '/assets/aistudio/Presentacion_Congreso_intro_769e4df9.mp4',
-      badge: 'Video Intro',
-      description:
-        'Gustavo Núñez explica el origen histórico del Servicio de Resguardo Patrimonial (evolución de la guardia de los años 80), las funciones críticas de custodia y el inicio del proyecto de transformación digital hace dos años en la UNR.'
-    },
-    slides: {
-      id: 'slides',
-      title: 'Presentación Explicativa Completa: Arquitectura y Métricas',
-      subtitle: 'Despliegue de las 3 capas tecnológicas, analítica predictiva y resultados',
-      src: '/assets/aistudio/Transformaci_n_Digital_SRP_UNR__1__0c398983.mp4',
-      badge: 'Video Explicativo Completo',
-      description:
-        'Video oficial con voz en off que detalla el diagnóstico inicial (el "Antes"), los 3 pilares del plan integral (TOGAF/ADKAR/IoT), la arquitectura de 3 capas (SGD-SRP, Cloud privada e IA predictiva con mapas de calor espaciotemporales) y los indicadores de impacto cuantificable.'
-    }
-  };
-
-  const currentVideo = videos[activeTab];
-
-  const handleTabChange = (tab: 'intro' | 'slides') => {
-    setActiveTab(tab);
-    setIsPlaying(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
+  const currentVideo = {
+    title: 'Presentación Explicativa Completa: Arquitectura y Métricas',
+    subtitle: 'Despliegue de las 3 capas tecnológicas, analítica predictiva y resultados',
+    src: '/assets/aistudio/Transformaci_n_Digital_SRP_UNR__1__0c398983.mp4',
+    badge: 'Video Explicativo Completo',
+    description:
+      'Video oficial con voz en off que detalla el diagnóstico inicial (el "Antes"), los 3 pilares del plan integral (TOGAF/ADKAR/IoT), la arquitectura de 3 capas (SGD-SRP, Cloud privada e IA predictiva con mapas de calor espaciotemporales) y los indicadores de impacto cuantificable.'
   };
 
   const toggleFullscreen = () => {
@@ -61,29 +37,7 @@ export function VideoHub() {
             Universidad Nacional de Rosario.
           </p>
 
-          {/* Video Selector Tabs */}
-          <div className="inline-flex p-1.5 mt-8 bg-slate-900 border border-slate-800 rounded-2xl gap-2">
-            <button
-              onClick={() => handleTabChange('intro')}
-              className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
-                activeTab === 'intro'
-                  ? 'bg-purple-600 text-white shadow-md shadow-purple-950'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800'
-              }`}
-            >
-              1. Introducción de Gustavo Núñez
-            </button>
-            <button
-              onClick={() => handleTabChange('slides')}
-              className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
-                activeTab === 'slides'
-                  ? 'bg-purple-600 text-white shadow-md shadow-purple-950'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800'
-              }`}
-            >
-              2. Video Explicativo & Arquitectura
-            </button>
-          </div>
+
         </div>
 
         {/* Video Player Container */}
