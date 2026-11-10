@@ -88,12 +88,12 @@ export function VideoHub() {
 
         {/* Video Player Container */}
         <div className="relative rounded-3xl overflow-hidden bg-slate-900 border border-purple-800/40 shadow-2xl group">
-          <div className="aspect-video w-full bg-black relative flex items-center justify-center">
+          <div className="w-full bg-black relative flex items-center justify-center">
             <video
               ref={videoRef}
               key={currentVideo.src}
               src={currentVideo.src}
-              className="w-full h-full object-contain"
+              className="w-full h-auto max-h-[80vh] object-contain"
               playsInline
               controls
               onPlay={() => setIsPlaying(true)}
